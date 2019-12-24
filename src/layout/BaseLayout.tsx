@@ -12,16 +12,15 @@ class BaseLayout extends React.Component<RouteComponentProps> {
     };
 
     onCollapse = (collapsed: boolean) => {
-        console.log(collapsed);
-        this.setState({ collapse:collapsed })
+        this.setState({ collapse:collapsed });
     };
 
     linkTo = (item: { key: string; }) => {
-        this.props.history.push(item.key)
+        this.props.history.push(`/${item.key}`);
     };
 
     getCurrentPath() : string {
-        return this.props.history.location.pathname === "/" ? "/home" : this.props.history.location.pathname
+        return this.props.history.location.pathname === "/" ? "home" : this.props.history.location.pathname.split("/")[1];
     }
 
     render() {
@@ -31,11 +30,11 @@ class BaseLayout extends React.Component<RouteComponentProps> {
                     <div className="logo" />
                     <Menu style={{position:"fixed", width: this.state.collapse ? 80 : 200}}
                           theme="dark" selectedKeys={[this.getCurrentPath()]} mode="inline" onClick={this.linkTo}>
-                        <Menu.Item key="/home">
+                        <Menu.Item key="home">
                             <Icon type="home" theme="filled"/>
                             <span>首页</span>
                         </Menu.Item>
-                        <Menu.Item key="/games">
+                        <Menu.Item key="games">
                             <Icon type="trophy" theme="filled"/>
                             <span>游戏</span>
                         </Menu.Item>
