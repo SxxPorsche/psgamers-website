@@ -7,7 +7,11 @@ class GameService extends BaseService{
 
     getGames = (pageNum : number, pageSize : number) => {
         return this.get(`/v1/game?pageNum=${pageNum}&pageSize=${pageSize}`);
-    }
+    };
+
+    getGameDetail = (id: string) =>{
+        return this.get(`/v1/game/${id}`);
+    };
 }
 
 export default GameService;

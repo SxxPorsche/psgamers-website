@@ -8,6 +8,7 @@ import SkeletonImage from "../SkeletonImage/SkeletonImage";
 const { Meta } = Card;
 
 export interface Game {
+    id: string
     nameCn: string,
     platform: string,
     platinum: number,
