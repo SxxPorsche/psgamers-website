@@ -1,0 +1,34 @@
+.game-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis ;
+}
+
+.game-cover {
+    background-color: black;
+}
+
+.progress-container {
+    padding-left: 10px;
+    border-left: 1px solid #e8e8e8;
+}
+
+.trophy-group{
+    overflow: hidden;
+}
+.trophy + .trophy {
+    margin-left: 10px;
+}
+
+.platinum {
+    color: #667fb2;
+}
+.gold {
+    color: #c2903e;
+}
+.silver {
+    color: #777777;
+}
+.bronze {
+    color: #c46438;
+}
