@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   List,
   Input,
@@ -8,12 +8,12 @@ import {
   Button,
   Pagination,
   Affix
-} from "antd";
-import GameCard, { Game } from "../../components/GameCard/GameCard";
-import GameService from "../../service/GameService";
-import { AxiosResponse } from "axios";
-import { RouteComponentProps } from "react-router";
-import { Link } from "react-router-dom";
+} from 'antd';
+import GameCard, { Game } from '../../components/GameCard/GameCard';
+import GameService from '../../service/GameService';
+import { AxiosResponse } from 'axios';
+import { RouteComponentProps } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const { Search } = Input;
 
@@ -25,15 +25,15 @@ interface GameListState {
 }
 
 const emptyGame: Game = {
-  id: "",
-  nameCn: "",
-  platform: "",
+  id: '',
+  nameCn: '',
+  platform: '',
   platinum: 0,
   gold: 0,
   silver: 0,
   bronze: 0,
-  iconUrl: "",
-  smallIconUrl: ""
+  iconUrl: '',
+  smallIconUrl: ''
 };
 
 const service: GameService = new GameService();
@@ -44,15 +44,8 @@ class GameView extends React.Component<RouteComponentProps, GameListState> {
     loading: true,
     total: 0,
     page:
-      new URLSearchParams(this.props.location.search.substring(1)).get(
-        "page"
-      ) === null
-        ? 1
-        : Number(
-            new URLSearchParams(this.props.location.search.substring(1)).get(
-              "page"
-            )
-          )
+      new URLSearchParams(this.props.location.search.substring(1)).get('page') === null ?
+        1 : Number(new URLSearchParams(this.props.location.search.substring(1)).get('page'))
   };
 
   constructor(props: RouteComponentProps, state: GameListState) {
@@ -102,7 +95,7 @@ class GameView extends React.Component<RouteComponentProps, GameListState> {
     window.scrollTo({
       left: 0,
       top: 0,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
 
@@ -111,12 +104,12 @@ class GameView extends React.Component<RouteComponentProps, GameListState> {
       <div>
         <div
           className="ant-row-flex ant-row-flex-space-between"
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         >
           <Search
             enterButton
             placeholder="搜索游戏..."
-            style={{ width: "40%" }}
+            style={{ width: '40%' }}
             onSearch={value => console.log(value)}
           />
           <Button icon="filter" type="primary">

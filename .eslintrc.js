@@ -3,11 +3,13 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'react-app',
-    'plugin:prettier/recommended',
   ],
   plugins: [
     "@typescript-eslint",
     "react"
   ],
-  rules: {}
+  rules: {
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'jsx-quotes': ['error', 'prefer-double'],
+  }
 };
