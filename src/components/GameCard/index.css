@@ -16,6 +16,7 @@
 .trophy-group{
     overflow: hidden;
 }
+
 .trophy + .trophy {
     margin-left: 10px;
 }

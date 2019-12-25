@@ -1,0 +1,25 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global",
+          "local"
+        ]
+      }
+    ],
+    "no-missing-end-of-source-newline": null,
+    "declaration-block-trailing-semicolon": null
+  },
+  "at-rule-no-unknown": [
+    false,
+    {
+      "ignoreAtRules": [
+        "extends",
+        "ignores"
+      ]
+    }
+  ]
+}
