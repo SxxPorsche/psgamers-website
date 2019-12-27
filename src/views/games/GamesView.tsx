@@ -10,7 +10,7 @@ import {
   Affix
 } from 'antd';
 import GameCard, { Game } from '../../components/GameCard/GameCard';
-import GameService from '../../service/GameService';
+import GameService from '../../services/GameService';
 import { AxiosResponse } from 'axios';
 import { RouteComponentProps } from 'react-router';
 import { Link } from 'react-router-dom';

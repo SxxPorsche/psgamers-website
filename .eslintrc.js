@@ -12,4 +12,11 @@ module.exports = {
     quotes: ['error', 'single', { avoidEscape: true }],
     'jsx-quotes': ['error', 'prefer-double'],
   },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack/webpack.dev.js"
+      }
+    }
+  }
 };
