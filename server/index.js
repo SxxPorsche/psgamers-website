@@ -12,3 +12,21 @@ const middleware = require('./middleware');
 
 const app = express();
 const proxy = require('http-proxy-middleware');
+
+app.use('/api', proxy({
+  target: HOST,
+  changeOrigin: true,
+}));
+
+middleware(app, {
+  outputPath: resolve(process.cwd(), 'local'),
+  publicPath: '/',
+});
+
+app.listen(PORT, HOST, (err) => {
+  if (err) {
+    return logger.error(err.message);
+  }
+
+  logger.appStarted(PORT, HOST);
+});
