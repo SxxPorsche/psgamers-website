@@ -1,8 +1,9 @@
 const express = require('express');
+const path = require('path');
 const logger = require('./logger');
 const GLOBAL = require('../global');
 
-const GLOBAL_ENV = GLOBAL[process.env.Env] || {};
+const GLOBAL_ENV = GLOBAL[process.env.ENV] || {};
 
 const HOST = GLOBAL_ENV.HOST;
 const PORT = GLOBAL_ENV.PORT;
@@ -19,7 +20,7 @@ app.use('/api', proxy({
 }));
 
 middleware(app, {
-  outputPath: resolve(process.cwd(), 'local'),
+  outputPath: path.resolve(process.cwd(), 'local'),
   publicPath: '/',
 });
 

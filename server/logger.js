@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const ip = require('ip');
+// const ip = require('ip');
 
 const divider = chalk.gray('\n-----------------------------------');
 
@@ -11,8 +11,7 @@ const logger = {
   appStarted: (port, host) => {
     console.log(`Server started ! ${chalk.green('✓')}`);
     console.log(`${chalk.bold('Access URLs:')}${divider}
-      Localhost: ${chalk.magenta(`http://${ip.address()}:${port}`)}
-      Proxy: ${chalk.magenta(host)}
+      Localhost: ${chalk.magenta(`http://localhost:${port}`)}
       ${divider}
     `);
   },
