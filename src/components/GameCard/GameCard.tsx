@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Divider, Progress, Skeleton } from 'antd';
 import './index.css';
-import GameTag from '../GameTag/GameTag';
-import IconFont from '../IconFont/IconFont';
-import SkeletonImage from '../SkeletonImage/SkeletonImage';
+import GameTag from 'components/GameTag/GameTag';
+import IconFont from 'components/IconFont/IconFont';
+import SkeletonImage from 'components/SkeletonImage/SkeletonImage';
 
 const { Meta } = Card;
 

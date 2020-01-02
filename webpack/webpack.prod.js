@@ -97,4 +97,6 @@ module.exports = require('./webpack.base')({
   performance: {
     assetFilter: (assetFilename) => !(/(\.map$)|(^(main\.|favicon\.))/.test(assetFilename)),
   },
+
+  hasHash: true,
 });

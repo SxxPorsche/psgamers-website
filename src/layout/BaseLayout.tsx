@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import MyRouter from '../router/MyRouter';
 import { RouteComponentProps, withRouter } from 'react-router';
+import MyRouter from 'router/MyRouter';
 
 const { Content, Sider, Footer, Header } = Layout;
 

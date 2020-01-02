@@ -5,9 +5,9 @@ import {
   Switch,
   withRouter
 } from 'react-router-dom';
-import HomeView from './../views/home/HomeView';
-import GameView from './../views/games/GamesView';
-import GameDetailView from '../views/games/GameDetailView';
+import HomeView from 'views/home/HomeView';
+import GameView from 'views/games/GamesView';
+import GameDetailView from 'views/games/GameDetailView';
 
 class MyRouter extends React.Component<RouteComponentProps> {
   render() {

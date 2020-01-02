@@ -36,7 +36,7 @@ module.exports = (options) => ({
         exclude: /node_modules/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: options.hasHash ? MiniCssExtractPlugin.loader : 'style-loader',
           },
           {
             loader: 'css-loader',
@@ -115,7 +115,7 @@ module.exports = (options) => ({
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh/),
   ]),
   resolve: {
-    modules: ['src', 'node_modules'],
+    modules: ['./src', 'node_modules'],
     extensions: [ '.tsx', '.ts', '.js' ],
     alias: {
       // zh-cn.js will import '../moment', since we are using jsnext:main, it will pack two copys of moment.

@@ -89,6 +89,8 @@ module.exports = require('./webpack.base')({
   // See https://webpack.js.org/configuration/devtool/#devtool
   devtool: 'cheap-module-eval-source-map',
 
+  hasHash: false,
+
   performance: {
     hints: false,
   },

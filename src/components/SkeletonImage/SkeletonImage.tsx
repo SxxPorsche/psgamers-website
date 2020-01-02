@@ -1,5 +1,5 @@
 import React from 'react';
-// import placeholder from '../../assets/placeholder.png';
+import placeholder from 'assets/placeholder.png';
 
 interface ImageProps {
   src: string;
@@ -19,7 +19,7 @@ class SkeletonImage extends React.Component<ImageProps> {
           width="100%"
           height="100%"
           style={{ backgroundColor: this.props.backgroundColor }}
-          src={this.props.src}
+          src={this.props.loading ? placeholder : this.props.src}
         />
         <div hidden>
           <img src={this.props.src} onLoad={this.imageLoaded.bind(this)} />

@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router';
-import GameService from '../../services/GameService';
-import { Game } from '../../components/GameCard/GameCard';
-import SkeletonImage from '../../components/SkeletonImage/SkeletonImage';
+import GameService from 'services/GameService';
+import { Game } from 'components/GameCard/GameCard';
+import SkeletonImage from 'components/SkeletonImage/SkeletonImage';
 import './index.css';
 
 interface GameDetailState {
