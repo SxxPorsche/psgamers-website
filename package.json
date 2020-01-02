@@ -70,7 +70,7 @@
   },
   "scripts": {
     "start": "cross-env ENV=local node server/index",
-    "build": "webpack --config webpack/webpack.prod.js --progress"
+    "build": "webpack --config webpack/webpack.prod.js -p --progress"
   },
   "browserslist": {
     "production": [
