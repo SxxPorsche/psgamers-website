@@ -28,7 +28,7 @@ module.exports = (options) => ({
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: 'babel-loader',
         exclude: /node_modules/
       },
       {
@@ -77,6 +77,30 @@ module.exports = (options) => ({
                 autoprefixer(/* package.json/browserslist */),
               ],
             },
+          },
+        ],
+      },
+      {
+        // Ant Design less
+        test: /\.less$/,
+        use: [
+          {
+            loader: options.hasHash ? MiniCssExtractPlugin.loader : 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [autoprefixer()],
+            },
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true,
+            }
           },
         ],
       },
