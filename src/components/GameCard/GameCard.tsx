@@ -1,11 +1,10 @@
 import React from 'react';
-import { Card, Divider, Progress, Skeleton } from 'antd';
+import { Card, Progress, Skeleton } from 'antd';
+import classnames from 'classnames';
 import GameTag from 'components/GameTag/GameTag';
 import IconFont from 'components/IconFont/IconFont';
 import SkeletonImage from 'components/SkeletonImage/SkeletonImage';
-import './index.css';
-
-const { Meta } = Card;
+import styles from './index.css';
 
 export interface Game {
   id: string;
@@ -23,8 +22,6 @@ interface GameProps {
   data: Game;
   loading?: boolean;
 }
-
-interface GameState {}
 
 class GameCard extends React.Component<GameProps, GameState> {
   render() {
@@ -48,34 +45,34 @@ class GameCard extends React.Component<GameProps, GameState> {
                 title={false}
                 paragraph={{ rows: 2 }}
               >
-                <h4 className="game-name">{this.props.data.nameCn}</h4>
+                <h4 className={styles['game-name']}>{this.props.data.nameCn}</h4>
                 <div style={{ position: 'absolute', right: '5px', top: '5px' }}>
                   {this.props.data.platform !== undefined &&
                     this.props.data.platform.split(',').map(platform => {
                       return <GameTag platform={platform} key={platform} />;
                     })}
                 </div>
-                <div className="trophy-group">
-                  <span className="trophy platinum">
+                <div className={styles['trophy-group']}>
+                  <span className={classnames(styles.trophy, styles.platinum)}>
                     <IconFont unicode="&#xe77f;" />
                     {this.props.data.platinum}
                   </span>
-                  <span className="trophy gold">
+                  <span className={classnames(styles.trophy, styles.gold)}>
                     <IconFont unicode="&#xe77f;" />
                     {this.props.data.gold}
                   </span>
-                  <span className="trophy silver">
+                  <span className={classnames(styles.trophy, styles.silver)}>
                     <IconFont unicode="&#xe77f;" />
                     {this.props.data.silver}
                   </span>
-                  <span className="trophy bronze">
+                  <span className={classnames(styles.trophy, styles.bronze)}>
                     <IconFont unicode="&#xe77f;" />
                     {this.props.data.bronze}
                   </span>
                 </div>
               </Skeleton>
             </div>
-            <div className="progress-container">
+            <div className={styles['progress-container']}>
               <Progress
                 type="circle"
                 percent={this.props.loading ? 0 : 30}

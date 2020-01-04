@@ -91,12 +91,6 @@ module.exports = (options) => ({
             loader: 'css-loader',
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              plugins: [autoprefixer()],
-            },
-          },
-          {
             loader: 'less-loader',
             options: {
               javascriptEnabled: true,

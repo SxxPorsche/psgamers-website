@@ -3,7 +3,7 @@ import { Layout, Menu, Icon } from 'antd';
 import { RouteComponentProps, withRouter } from 'react-router';
 import MyRouter from 'router/MyRouter';
 
-const { Content, Sider, Footer, Header } = Layout;
+const { Content, Header } = Layout;
 
 class BaseLayout extends React.Component<RouteComponentProps> {
   state = {

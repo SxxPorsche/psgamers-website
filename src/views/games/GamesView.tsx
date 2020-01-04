@@ -3,11 +3,8 @@ import {
   List,
   Input,
   Divider,
-  Breadcrumb,
-  Dropdown,
   Button,
   Pagination,
-  Affix
 } from 'antd';
 import GameCard, { Game } from 'components/GameCard/GameCard';
 import GameService from 'services/GameService';
@@ -47,10 +44,6 @@ class GameView extends React.Component<RouteComponentProps, GameListState> {
       new URLSearchParams(this.props.location.search.substring(1)).get('page') === null ?
         1 : Number(new URLSearchParams(this.props.location.search.substring(1)).get('page'))
   };
-
-  constructor(props: RouteComponentProps, state: GameListState) {
-    super(props, state);
-  }
 
   getGameList = (pageNum: number) => {
     this.setState({

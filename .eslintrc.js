@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     quotes: ['error', 'single', { avoidEscape: true }],
     'jsx-quotes': ['error', 'prefer-double'],
+    '@typescript-eslint/explicit-function-return-type': 0,
   },
   "settings": {
     "import/resolver": {

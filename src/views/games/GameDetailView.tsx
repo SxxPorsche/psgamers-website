@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router';
 import GameService from 'services/GameService';
 import { Game } from 'components/GameCard/GameCard';
 import SkeletonImage from 'components/SkeletonImage/SkeletonImage';
-import './index.css';
+import styles from './index.css';
 
 interface GameDetailState {
   loading: boolean;
@@ -12,10 +12,7 @@ interface GameDetailState {
 
 const gameService = new GameService();
 
-class GameDetailView extends React.Component<
-  RouteComponentProps,
-  GameDetailState
-> {
+class GameDetailView extends React.Component<RouteComponentProps, GameDetailState> {
   state = {
     loading: true,
     game: {
@@ -32,7 +29,7 @@ class GameDetailView extends React.Component<
   };
 
   componentDidMount() {
-    const gameId = (this.props.match.params as any).id;
+    const { gameId } = this.props.match.params;
     gameService.getGameDetail(gameId).then(response => {
       if (response.data.status === 200) {
         this.setState({
@@ -46,7 +43,7 @@ class GameDetailView extends React.Component<
   render() {
     return (
       <div>
-        <div className="detail-header">
+        <div className={styles['detail-header']}>
           <SkeletonImage
             loading={this.state.loading}
             src={this.state.game.iconUrl}
