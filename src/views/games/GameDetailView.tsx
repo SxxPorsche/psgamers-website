@@ -29,8 +29,7 @@ class GameDetailView extends React.Component<RouteComponentProps, GameDetailStat
   };
 
   componentDidMount() {
-    console.log(this.props)
-    const { id } = this.props.match.params;
+    const { id } = this.props.match.params as any;
     gameService.getGameDetail(id).then(response => {
       if (response.data.status === 200) {
         this.setState({

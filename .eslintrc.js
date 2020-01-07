@@ -13,6 +13,7 @@ module.exports = {
     quotes: ['error', 'single', { avoidEscape: true }],
     'jsx-quotes': ['error', 'prefer-double'],
     '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
   "settings": {
     "import/resolver": {

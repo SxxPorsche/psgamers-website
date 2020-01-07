@@ -74,7 +74,7 @@ class GameView extends React.Component<RouteComponentProps, GameListState> {
     this.setState({ games: [], loading: false, total: 0 });
   };
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     this.getGameList(this.state.page);
   };
 

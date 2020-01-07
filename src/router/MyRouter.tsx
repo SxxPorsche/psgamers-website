@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import {
   Route,
   RouteComponentProps,
   Switch,
   withRouter
 } from 'react-router-dom';
-import HomeView from 'views/home/HomeView';
-import GameView from 'views/games/GamesView';
-import GameDetailView from 'views/games/GameDetailView';
+import { routes } from './routes';
+
+interface MyRoute extends Object {
+  path: string;
+  pageName: string;
+  component: any;
+}
 
 class MyRouter extends React.Component<RouteComponentProps> {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={HomeView} />
-        <Route exact path="/home" component={HomeView} />
-        <Route exact path="/games" component={GameView} />
-        <Route path="/games/:id" component={GameDetailView} />
-      </Switch>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          {routes.map((route) => (
+            <Route
+              key={(route as MyRoute).path}
+              exact
+              path={(route as MyRoute).path}
+              component={(route as MyRoute).component}
+            />
+          ))}
+        </Switch>
+      </Suspense>
     );
   }
 }
