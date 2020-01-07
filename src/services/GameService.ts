@@ -1,16 +1,15 @@
-import BaseService from './BaseService';
+import request from 'utils/request';
 
-class GameService extends BaseService {
-  constructor() {
-    super({ host: 'http://129.204.168.25/api/game-service' });
-  }
-
+class GameService {
   getGames = (pageNum: number, pageSize: number) => {
-    return this.get(`/v1/game?pageNum=${pageNum}&pageSize=${pageSize}`);
+    return request.get('/api/game-service/v1/game', {
+      pageNum,
+      pageSize,
+    });
   };
 
   getGameDetail = (id: string) => {
-    return this.get(`/v1/game/${id}`);
+    return request.get(`/api/game-service/v1/game/${id}`);
   };
 }
 

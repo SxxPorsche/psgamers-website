@@ -24,10 +24,12 @@ middleware(app, {
   publicPath: '/',
 });
 
-app.listen(PORT, HOST, (err) => {
+const listenHost = 'localhost';
+
+app.listen(PORT, listenHost, (err) => {
   if (err) {
     return logger.error(err.message);
   }
 
-  logger.appStarted(PORT, HOST);
+  logger.appStarted(PORT, listenHost);
 });
