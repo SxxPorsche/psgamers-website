@@ -122,6 +122,7 @@ module.exports = (options) => ({
       'public/favicon.ico',
       'public/manifest.json',
       'public/robots.txt',
+      'public/logo192.png',
     ].map((src) => ({ from: src, to: path.resolve(process.cwd(), 'build') }))),
 
     new MiniCssExtractPlugin({

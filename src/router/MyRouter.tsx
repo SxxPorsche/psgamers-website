@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { routes } from './routes';
 
-interface MyRoute extends Object {
+interface MyRoute {
   path: string;
   pageName: string;
   component: any;
@@ -18,10 +18,10 @@ class MyRouter extends React.Component<RouteComponentProps> {
     return (
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          {routes.map((route) => (
+          {routes.map((route: object) => (
             <Route
-              key={(route as MyRoute).path}
               exact
+              key={(route as MyRoute).path}
               path={(route as MyRoute).path}
               component={(route as MyRoute).component}
             />
