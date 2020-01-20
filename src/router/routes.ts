@@ -2,9 +2,9 @@ import { lazy } from 'react';
 
 const routes: object[] = [
 	{
-		path: '/home',
-		pageName: 'HomeView',
-		component: lazy(() => import('views/home/HomeView')),
+		path: '/upload',
+		pageName: 'Upload',
+		component: lazy(() => import('views/upload')),
 	},
 	{
 		path: '/games',

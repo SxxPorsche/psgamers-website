@@ -14,6 +14,7 @@ module.exports = {
     'jsx-quotes': ['error', 'prefer-double'],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-explicit-any': 0,
+    'object-curly-spacing': ['error', 'always'],
   },
   "settings": {
     "import/resolver": {

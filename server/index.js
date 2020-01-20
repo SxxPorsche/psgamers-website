@@ -19,6 +19,10 @@ app.use('/api', proxy({
   changeOrigin: true,
 }));
 
+app.use('/file-api/upload', function (req, res) {
+  console.log(req);
+});
+
 middleware(app, {
   outputPath: path.resolve(process.cwd(), 'local'),
   publicPath: '/',
