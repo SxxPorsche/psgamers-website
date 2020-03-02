@@ -1,5 +1,14 @@
 import axios from 'axios';
 
+function createFormData(data?: object) {
+  if(data) {
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      formData.append(key, (data as any)[key]);
+    });
+  }
+}
+
 class BaseService {
   public get = (url: string, params?: object) => {
     return axios.get(url, {
@@ -8,13 +17,7 @@ class BaseService {
   };
 
   public post = (url: string, data?: object) => {
-    const formData = new FormData();
-    if (data) {
-      Object.keys(data).forEach((key) => {
-        formData.append(key, (data as any)[key]);
-      })
-    }
-    return axios.post(url, formData);
+    return axios.post(url, createFormData(data));
   };
 
   public delete = (url: string, params?: object) => {
