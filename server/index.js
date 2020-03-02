@@ -8,7 +8,6 @@ const GLOBAL_ENV = GLOBAL[process.env.ENV] || {};
 const HOST = GLOBAL_ENV.HOST;
 const PORT = GLOBAL_ENV.PORT;
 
-
 const middleware = require('./middleware');
 
 const app = express();
@@ -18,10 +17,6 @@ app.use('/api', proxy({
   target: HOST,
   changeOrigin: true,
 }));
-
-app.use('/file-api/upload', function (req, res) {
-  console.log(req);
-});
 
 middleware(app, {
   outputPath: path.resolve(process.cwd(), 'local'),

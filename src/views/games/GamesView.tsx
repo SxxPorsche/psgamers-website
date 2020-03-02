@@ -1,4 +1,5 @@
 import React from 'react';
+import { FilterOutlined } from '@ant-design/icons';
 import {
   List,
   Input,
@@ -105,7 +106,7 @@ class GameView extends React.Component<RouteComponentProps, GameListState> {
             style={{ width: '40%' }}
             onSearch={value => console.log(value)}
           />
-          <Button icon="filter" type="primary">
+          <Button icon={<FilterOutlined />} type="primary">
             筛选
           </Button>
         </div>

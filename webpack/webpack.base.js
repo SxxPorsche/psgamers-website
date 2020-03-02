@@ -3,7 +3,6 @@
 **/
 
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssGlobalImport = require('postcss-global-import');
 const postcssImport = require('postcss-import');
@@ -15,6 +14,7 @@ const postcssNested = require('postcss-nested');
 const postcssSelectorNot = require('postcss-selector-not');
 const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
 module.exports = (options) => ({
   entry: options.entry,
@@ -129,17 +129,12 @@ module.exports = (options) => ({
       filename: '[name].[contenthash:8].css',
       chunkFilename: '[name].[contenthash:8].css',
     }),
-    // only load locale we need
-    // https://github.com/moment/moment/issues/2517#issuecomment-185836313
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh/),
+
+    new AntdDayjsWebpackPlugin(),
   ]),
   resolve: {
     modules: ['src', 'node_modules'],
     extensions: [ '.tsx', '.ts', '.js' ],
-    alias: {
-      // zh-cn.js will import '../moment', since we are using jsnext:main, it will pack two copys of moment.
-      'moment$': path.resolve('node_modules/moment/moment'),
-    }
   },
   stats: {
     errors: true,

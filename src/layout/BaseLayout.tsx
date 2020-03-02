@@ -1,5 +1,6 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { HomeOutlined, TrophyOutlined, AudioOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
 import { RouteComponentProps, withRouter } from 'react-router';
 import MyRouter from 'router/MyRouter';
 
@@ -44,15 +45,15 @@ class BaseLayout extends React.Component<RouteComponentProps> {
             onClick={this.linkTo}
           >
             <Menu.Item key="home">
-              <Icon type="home" theme="filled" />
+              <HomeOutlined />
               <span>首页</span>
             </Menu.Item>
             <Menu.Item key="games">
-              <Icon type="trophy" theme="filled" />
+              <TrophyOutlined />
               <span>游戏</span>
             </Menu.Item>
             <Menu.Item key="channel">
-              <Icon type="audio" theme="filled" />
+              <AudioOutlined />
               <span>频道</span>
             </Menu.Item>
           </Menu>
