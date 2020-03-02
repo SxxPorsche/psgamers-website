@@ -1,6 +1,16 @@
 {
-  "local": {
-    "HOST": "http://129.204.168.25",
-    "PORT": 3000
-  }
+  "local": [
+    {
+      "host": "http://129.204.168.25:3000",
+      "match": [
+        "/api"
+      ]
+    },
+    {
+      "host": "http://localhost:7001",
+      "match": [
+        "/file-api"
+      ]
+    }
+  ]
 }

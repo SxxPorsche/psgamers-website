@@ -6,6 +6,7 @@ function createFormData(data?: object) {
     Object.keys(data).forEach((key) => {
       formData.append(key, (data as any)[key]);
     });
+    return formData;
   }
 }
 
